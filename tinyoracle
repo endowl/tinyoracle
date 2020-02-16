@@ -62,9 +62,11 @@ http.createServer(function (req, res) {
       .then(result => {
         res.writeHead(200);
         res.end("dead: " + deadStatus + "\n" + JSON.stringify(result, undefined,2));
+        console.log(result);
       })
       .catch(result => {
         res.writeHead(300);
         res.end("error: " + JSON.stringify(result, undefined,2));
+        console.log(result);
       });
 }).listen(8000);
